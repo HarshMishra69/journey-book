@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Website</title>
+  <link rel="stylesheet" href="website.css">
+</head>
+<body style="background-image: url(travel-hd-axhrsecphqby11wk.jpg);background-repeat: no-repeat; background-size:cover" >
+  <div class="container">
+    <h1>Welcome to Your Travel BOOK!</h1>
+    
+    <div class="buttons">
+    <form action="anonymous.html">
+        <button onclick="anonymousTrip()">Anonymous Trip</button>
+    </form>
+      
+      <button onclick="getWeather()">Real-Time Weather Update</button>
+      <form action="blog.html">
+        <button onclick="uploadBlog()">Upload Blog or Pictures</button>
+    </form>
+      
+      <button onclick="tripAdvisor()">Hidden Places Trip Advisor</button>
+    </div>
+
+    <div class="weather-results">
+      <h2>Weather Update</h2>
+      <div id="weatherData"></div>
+    </div>
+
+    <div class="blog-section">
+      <h2>Latest Blogs</h2>
+      <!-- Blog posts will be dynamically loaded here -->
+    </div>
+
+    <div class="pictures-section">
+      <h2>Uploaded Pictures</h2>
+      <!-- Uploaded pictures will be dynamically loaded here -->
+    </div>
+
+    <div class="trip-advisor">
+      <h2>Hidden Places Trip Advisor</h2>
+      <!-- Trip advisor content will be dynamically loaded here -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
