@@ -1,0 +1,141 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image:url("filip-bunkens-R5SrmZPoO40-unsplash (1).jpg");
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  .buttons {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .buttons button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .buttons button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Weather Update Section Styles */
+  .weather-results, .blog-section, .pictures-section, .hidden-places {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .weather-results h2, .blog-section h2, .pictures-section h2, .hidden-places h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .weather-results p, .blog-section p, .pictures-section p, .hidden-places p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Form Styles */
+  .hidden-places  {
+    margin-bottom: 20px;
+    /* opacity: 0.9; */
+  }
+  
+  .hidden-places input[type="text"],
+  .hidden-places textarea,
+  .hidden-places input[type="url"],
+  .hidden-places button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .hidden-places textarea {
+    height: 100px;
+  }
+  
+  .hidden-places button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .hidden-places button:hover {
+    background-color: #218838;
+  }
+  
+  /* Individual Hidden Place Styles */
+  .hidden-place {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .hidden-place h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .hidden-place p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .hidden-place img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 28px;
+    }
+  
+    .container {
+      padding: 10px;
+    }
+  
+    .buttons button {
+      padding: 8px 16px;
+    }
+  
+    .weather-results, .blog-section, .pictures-section, .hidden-places {
+      padding: 10px;
+    }
+  
+    .hidden-place h3 {
+      font-size: 18px;
+    }
+  }
+  

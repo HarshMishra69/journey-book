@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Real-Time Graph Website</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+  <h1>Real-Time Graph</h1>
+  <div id="graph-container">
+    <img id="graph-image" src="" alt="Graph Image">
+  </div>
+  
+  <script>
+    $(document).ready(function() {
+      function updateGraph() {
+        // Make an AJAX request to get the updated graph image
+        $.ajax({
+          url: 'https://imgur.com/a/6UT3vJg', // URL of your graph image
+          cache: false,
+          success: function(data) {
+            $('#graph-image').attr('src', data); // Update the image source
+          }
+        });
+      }
+
+      // Call updateGraph function every 5 seconds (5000 milliseconds)
+      setInterval(updateGraph, 5000);
+    });
+  </script>
+</body>
+</html>

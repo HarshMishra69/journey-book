@@ -1,0 +1,142 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  color: #333;
+}
+
+h1 {
+  color: #333;
+  margin-top: 20px;
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-container label,
+.city-select label {
+  font-weight: bold;
+}
+
+.search-container input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  width: 200px;
+}
+
+.search-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background-color: #0056b3;
+}
+
+.city-select select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 200px;
+  margin-top: 10px;
+}
+
+.weather-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.weather-container h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.weather-data {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.weather-data .bold {
+  font-weight: bold;
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.unit-toggle {
+  margin-top: 10px;
+}
+
+.unit-toggle input[type="radio"] {
+  display: none;
+}
+
+.unit-toggle label {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.unit-toggle input[type="radio"]:checked + label {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.forecast {
+  margin-top: 20px;
+}
+
+.forecast h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.forecast-days {
+  display: flex;
+  justify-content: space-around;
+}
+
+.forecast-day {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 5px;
+}
+
+.forecast-day h3 {
+  margin-top: 0;
+}

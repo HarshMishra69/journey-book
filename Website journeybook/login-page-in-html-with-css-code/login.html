@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page in HTML with CSS Code Example</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!-- Link to your external CSS file -->
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function loginUser() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Here you can add your login logic, for example:
+      // Check if username and password are correct
+      // If correct, redirect to dashboard or perform any other action
+      // For now, we'll just show an alert with the entered username and password
+      alert("Username: " + username + "\nPassword: " + password);
+    }
+  </script>
+</head>
+<body>
+<div class="box-form">
+  <div class="left">
+    <div class="overlay">
+      <h1>Journey Book</h1>
+      <p></p>
+      <span>
+        <p>login with social media</p>
+        <!-- Updated href for Twitter login -->
+        <a href="https://twitter.com/i/flow/login"><i class="fa fa-twitter" aria-hidden="true"></i> Login with Twitter</a>
+        <!-- Added Login with Google -->
+        <a href="https://accounts.google.com/AccountChooser/signinchooser?service=chromiumsync&hl=en-GB&theme=mn&ddm=0&flowName=GlifWebSignIn&flowEntry=AccountChooser"><i class="fa fa-google" aria-hidden="true"></i> Login with Google</a>
+      </span>
+    </div>
+  </div>
+  <div class="right">
+    <h5>Login</h5>
+    <p>Don't have an account? <a href="#">Create Your Account</a> it takes less than a minute</p>
+    <div class="inputs">
+      <input type="text" id="username" placeholder="Username">
+      <br>
+      <input type="password" id="password" placeholder="Password"href="login.py">
+    </div>
+    <br><br>
+    <div class="remember-me--forget-password">
+      <!-- Angular -->
+      <label>
+        <input type="checkbox" name="item" checked/>
+        <span class="text-checkbox">Remember me</span>
+      </label>
+      <p>Forgot password?</p>
+    </div>
+    <br>
+    <!-- Call the loginUser function when the button is clicked -->
+    <form action="webiste.html" >
+      <button onclick="loginUser()">Login</button>
+     
+    </form>
+    
+  </div>
+</div>
+</body>
+</html>

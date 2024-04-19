@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Real-Time Weather</title>
+  <link rel="stylesheet" type="text/css" href="weather.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body style="background-image: url('filip-bunkens-R5SrmZPoO40-unsplash (1).jpg');"></body>
+  <div class="container">
+    <h1>Real-Time Weather</h1>
+
+    <div class="search-container">
+      <label for="search">Search for a City:</label>
+      <input type="text" id="search" placeholder="Enter a city name...">
+      <button onclick="searchWeather()">Search</button>
+    </div>
+
+    <div class="city-select">
+      <label for="city">or Select a City:</label>
+      <select id="city" onchange="getWeatherData()">
+        <option value="Mumbai">Mumbai</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Kolkata">Kolkata</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Ahmedabad">Ahmedabad</option>
+        <option value="Pune">Pune</option>
+        <option value="Jaipur">Jaipur</option>
+        <option value="Surat">Surat</option>
+        <option value="Lucknow">Lucknow</option>
+        <option value="Kanpur">Kanpur</option>
+        <option value="Nagpur">Nagpur</option>
+        <option value="Visakhapatnam">Visakhapatnam</option>
+        <option value="Indore">Indore</option>
+        <option value="Thane">Thane</option>
+        <option value="Ahmednagar">Ahmednagar</option>
+        <option value="Aligarh">Aligarh</option>
+        <option value="Allahabad">Allahabad</option>
+        <option value="Amravati">Amravati</option>
+        <option value="Amritsar">Amritsar</option>
+        <option value="Asansol">Asansol</option>
+        <option value="Aurangabad">Aurangabad</option>
+        <option value="Bareilly">Bareilly</option>
+        <option value="Belgaum">Belgaum</option>
+        <option value="Bhavnagar">Bhavnagar</option>
+        <option value="Bhiwandi">Bhiwandi</option>
+        <option value="Bhopal">Bhopal</option>
+        <option value="Bhubaneswar">Bhubaneswar</option>
+        <option value="Bikaner">Bikaner</option>
+        <option value="Bokaro Steel City">Bokaro Steel City</option>
+        <option value="Chandigarh">Chandigarh</option>
+        <option value="Coimbatore">Coimbatore</option>
+        <option value="Cuttack">Cuttack</option>
+        <option value="Darbhanga">Darbhanga</option>
+        <option value="Davangere">Davangere</option>
+        <option value="Dehradun">Dehradun</option>
+        <option value="Dhanbad">Dhanbad</option>
+        <option value="Durg">Durg</option>
+        <option value="Durgapur">Durgapur</option>
+        <option value="Erode">Erode</option>
+        <option value="Faridabad">Faridabad</option>
+        <option value="Firozabad">Firozabad</option>
+        <option value="Gaya">Gaya</option>
+        <option value="Ghaziabad">Ghaziabad</option>
+        <option value="Gorakhpur">Gorakhpur</option>
+        <option value="Gulbarga">Gulbarga</option>
+        <option value="Guntur">Guntur</option>
+        <option value="Gwalior">Gwalior</option>
+        <option value="Hisar">Hisar</option>
+        <option value="Hubli-Dharwad">Hubli-Dharwad</option>
+        <option value="Ichalkaranji">Ichalkaranji</option>
+        <option value="Jabalpur">Jabalpur</option>
+        <option value="Jalandhar">Jalandhar</option>
+        <option value="Jammu">Jammu</option>
+        <option value="Jamnagar">Jamnagar</option>
+        <option value="Jamshedpur">Jamshedpur</option>
+        <option value="Jhansi">Jhansi</option>
+        <option value="Jodhpur">Jodhpur</option>
+        <option value="Kakinada">Kakinada</option>
+        <option value="Kannur">Kannur</option>
+        <option value="Karnal">Karnal</option>
+        <option value="Kochi">Kochi</option>
+        <option value="Kolhapur">Kolhapur</option>
+        <option value="Kollam">Kollam</option>
+        <option value="Kozhikode">Kozhikode</option>
+        <option value="Kurnool">Kurnool</option>
+        <option value="Ludhiana">Ludhiana</option>
+        <option value="Madurai">Madurai</option>
+        <option value="Malappuram">Malappuram</option>
+        <option value="Mathura">Mathura</option>
+        <option value="Mangalore">Mangalore</option>
+        <option value="Muzaffarpur">Muzaffarpur</option>
+        <option value="Mysore">Mysore</option>
+        <option value="Nanded">Nanded</option>
+        <option value="Nashik">Nashik</option>
+        <option value="Nellore">Nellore</option>
+        <option value="Noida">Noida</option>
+        <option value="Patiala">Patiala</option>
+        <option value="Patna">Patna</option>
+        <option value="Pondicherry">Pondicherry</option>
+        <option value="Raipur">Raipur</option>
+        <option value="Rajahmundry">Rajahmundry</option>
+        <option value="Rajkot">Rajkot</option>
+        <option value="Ranchi">Ranchi</option>
+        <option value="Rourkela">Rourkela</option>
+        <option value="Saharanpur">Saharanpur</option>
+        <option value="Salem">Salem</option>
+        <option value="Sangli">Sangli</option>
+        <option value="Siliguri">Siliguri</option>
+        <option value="Solapur">Solapur</option>
+        <option value="Srinagar">Srinagar</option>
+        <option value="Surat">Surat</option>
+        <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+        <option value="Thrissur">Thrissur</option>
+        <option value="Tiruchirappalli">Tiruchirappalli</option>
+        <option value="Tirunelveli">Tirunelveli</option>
+        <option value="Ujjain">Ujjain</option>
+        <option value="Vadodara">Vadodara</option>
+        <option value="Varanasi">Varanasi</option>
+        <option value="Vasai-Virar">Vasai-Virar</option>
+        <option value="Vijayawada">Vijayawada</option>
+        <option value="Vizag">Vizag</option>
+        <option value="Warangal">Warangal</option>
+        <option value="Ajmer">Ajmer</option>
+        <option value="Akola">Akola</option>
+        <option value="Alappuzha">Alappuzha</option>
+        <option value="Ambala">Ambala</option>
+        <option value="Bardhaman">Bardhaman</option>
+        <option value="Bhagalpur">Bhagalpur</option>
+        <option value="Bhimavaram">Bhimavaram</option>
+        <option value="Bilaspur">Bilaspur</option>
+        <option value="Chandrapur">Chandrapur</option>
+        <option value="Darbhanga">Darbhanga</option>
+        <option value="Dindigul">Dindigul</option>
+        <option value="Dhule">Dhule</option>
+        <option value="Erode">Erode</option>
+        <option value="Faridabad">Faridabad</option>
+        <option value="Fatehpur">Fatehpur</option>
+        <option value="Gandhidham">Gandhidham</option>
+        <option value="Gandhinagar">Gandhinagar</option>
+        <option value="Gangtok">Gangtok</option>
+        <option value="Haldia">Haldia</option>
+        <option value="Haridwar">Haridwar</option>
+        <option value="Hosur">Hosur</option>
+        <option value="Jammu">Jammu</option>
+        <option value="Jamnagar">Jamnagar</option>
+        <option value="Jhansi">Jhansi</option>
+        <option value="Jodhpur">Jodhpur</option>
+        <option value="Junagadh">Junagadh</option>
+        <option value="Kakinada">Kakinada</option>
+        <option value="Kannur">Kannur</option>
+        <option value="Kanpur">Kanpur</option>
+        <option value="Karimnagar">Karimnagar</option>
+        <option value="Karnal">Karnal</option>
+        <option value="Kochi">Kochi</option>
+        <option value="Kottayam">Kottayam</option>
+        <option value="Kozhikode">Kozhikode</option>
+        <option value="Kurnool">Kurnool</option>
+        <option value="Latur">Latur</option>
+        <option value="Malegaon">Malegaon</option>
+        <option value="Mangalore">Mangalore</option>
+        <option value="Muzaffarpur">Muzaffarpur</option>
+        <option value="Mysore">Mysore</option>
+        <option value="Nagercoil">Nagercoil</option>
+        <option value="Nashik">Nashik</option>
+        <option value="Nellore">Nellore</option>
+        <option value="Ozhukarai">Ozhukarai</option>
+        <option value="Palakkad">Palakkad</option>
+        <option value="Patiala">Patiala</option>
+        <option value="Pimpri-Chinchwad">Pimpri-Chinchwad</option>
+        <option value="Raichur">Raichur</option>
+        <option value="Raigad">Raigad</option>
+        <option value="Raiganj">Raiganj</option>
+        <option value="Raipur">Raipur</option>
+        <option value="Rajkot">Rajkot</option>
+        <option value="Rajpur Sonarpur">Rajpur Sonarpur</option>
+        <option value="Ramagundam">Ramagundam</option>
+        <option value="Rampur">Rampur</option>
+        <option value="Ratlam">Ratlam</option>
+        <option value="Rohtak">Rohtak</option>
+        <option value="Saharanpur">Saharanpur</option>
+        <option value="Salem">Salem</option>
+        <option value="Sangli-Miraj & Kupwad">Sangli-Miraj & Kupwad</option>
+        <option value="Siliguri">Siliguri</option>
+        <option value="Shimla">Shimla</option>
+        <option value="Shivamogga">Shivamogga</option>
+        <option value="Shivpuri">Shivpuri</option>
+        <option value="Sikar">Sikar</option>
+        <option value="Sirsa">Sirsa</option>
+        <option value="Sonipat">Sonipat</option>
+        <option value="Srinagar">Srinagar</option>
+        <option value="Tadepalligudem">Tadepalligudem</option>
+        <option value="Thoothukudi">Thoothukudi</option>
+        <option value="Tirupati">Tirupati</option>
+        <option value="Tumkur">Tumkur</option>
+        <option value="Ulhasnagar">Ulhasnagar</option>
+        <option value="Vellore">Vellore</option>
+        <option value="Vijayanagaram">Vijayanagaram</option>
+        <option value="Viluppuram">Viluppuram</option>
+        <option value="Virar">Virar</option>
+        <option value="Warangal">Warangal</option>
+        <option value="Yamunanagar">Yamunanagar</option>
+        <option value="Yavatmal">Yavatmal</option>
+        <option value="Anantapur">Anantapur</option>
+        <option value="Bhagalpur">Bhagalpur</option>
+        <option value="Khammam">Khammam</option>
+        <option value="Purnia">Purnia</option>
+        <option value="Satna">Satna</option>
+        <option value="Sambalpur">Sambalpur</option>
+        <option value="Rourkela">Rourkela</option>
+        <option value="Deoghar">Deoghar</option>
+        <option value="Ongole">Ongole</option>
+        <option value="Nandyal">Nandyal</option>
+        <option value="Morena">Morena</option>
+        <option value="Bhiwani">Bhiwani</option>
+        <option value="Porbandar">Porbandar</option>
+        <option value="Palwal">Palwal</option>
+        <option value="Palanpur">Palanpur</option>
+        <option value="Haridwar">Haridwar</option>
+        <option value="Kottayam">Kottayam</option>
+        <option value="Bilaspur">Bilaspur</option>
+        <option value="Shahjahanpur">Shahjahanpur</option>
+        <!-- Add more cities here -->
+      </select>
+    </div>
+
+    <div class="weather-container">
+      <h2 id="city-name"></h2>
+      <div class="weather-data" id="weather-data"></div>
+      <img src="" alt="Weather Icon" class="weather-icon" id="weather-icon">
+      <div class="unit-toggle">
+        <input type="radio" id="celsius" name="units" value="metric" checked onchange="getWeatherData()">
+        <label for="celsius">Celsius</label>
+        <input type="radio" id="fahrenheit" name="units" value="imperial" onchange="getWeatherData()">
+        <label for="fahrenheit">Fahrenheit</label>
+      </div>
+    </div>
+
+    <div class="forecast">
+      <div class="chart-container">
+        <canvas id="temperature-chart" width="400" height="200"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="humidity-chart" width="400" height="200"></canvas>
+      </div>
+    </div>
+
+    <div class="weather-summary">
+      <h2>Weather Summary</h2>
+      <canvas id="weather-pie-chart" width="400" height="200"></canvas>
+    </div>
+  </div>
+
+  <script>
+    const apiKey = '7cc90ff20d0202732654ec7aef28f3f1';
+
+    async function getWeatherData() {
+      const city = document.getElementById('city').value;
+      const units = document.querySelector('input[name="units"]:checked').value;
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+      const apiForecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        const cityNameElement = document.getElementById('city-name');
+        const weatherDataElement = document.getElementById('weather-data');
+        const weatherIconElement = document.getElementById('weather-icon');
+
+        const { main, weather, wind, visibility, sys, name } = data;
+
+        if (main && weather && weather.length > 0) {
+          const { temp, humidity, pressure } = main;
+          const { description, icon } = weather[0];
+          const { speed: windSpeed } = wind;
+          const visibilityKm = visibility / 1000;
+          const { sunrise, sunset } = sys;
+
+          cityNameElement.textContent = `${name}, ${sys.country}`;
+          weatherDataElement.innerHTML = `
+            <div><span class="bold">Temperature:</span> ${temp}°</div>
+            <div><span class="bold">Humidity:</span> ${humidity}%</div>
+            <div><span class="bold">Pressure:</span> ${pressure} hPa</div>
+            <div><span class="bold">Wind Speed:</span> ${windSpeed} m/s</div>
+            <div><span class="bold">Visibility:</span> ${visibilityKm.toFixed(2)} km</div>
+            <div><span class="bold">Sunrise:</span> ${new Date(sunrise * 1000).toLocaleTimeString()}</div>
+            <div><span class="bold">Sunset:</span> ${new Date(sunset * 1000).toLocaleTimeString()}</div>
+            <div><span class="bold">Description:</span> ${description}</div>
+          `;
+
+          weatherIconElement.src = `http://openweathermap.org/img/wn/${icon}.png`;
+          weatherIconElement.alt = description;
+
+          const responseForecast = await fetch(apiForecastUrl);
+          const forecastData = await responseForecast.json();
+          const forecastDays = forecastData.list.filter((item) => item.dt_txt.includes('12:00:00'));
+
+          const chartLabels = [];
+          const tempData = [];
+          const humidityData = [];
+
+          forecastDays.slice(0, 3).forEach((day) => {
+            const { dt, main: dayMain } = day;
+            const { temp_max: maxTemp, humidity: dayHumidity } = dayMain;
+
+            const date = new Date(dt * 1000);
+            const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'short' });
+
+            chartLabels.push(dayOfWeek);
+            tempData.push(maxTemp);
+            humidityData.push(dayHumidity);
+          });
+
+          createTemperatureChart(chartLabels, tempData);
+          createHumidityChart(chartLabels, humidityData);
+          createWeatherSummaryChart(data);
+
+        } else {
+          cityNameElement.textContent = 'Weather data not available';
+        }
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
+      }
+    }
+
+    async function searchWeather() {
+      const searchInput = document.getElementById('search').value;
+      const searchUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=${apiKey}&units=metric`;
+
+      try {
+        const response = await fetch(searchUrl);
+        const data = await response.json();
+
+        if (data.cod === '404') {
+          alert('City not found. Please try again.');
+        } else {
+          document.getElementById('city').value = data.name;
+          getWeatherData();
+        }
+      } catch (error) {
+        console.error('Error searching for city:', error);
+        alert('An error occurred. Please try again.');
+      }
+    }
+
+    function createTemperatureChart(labels, data) {
+      var ctx = document.getElementById('temperature-chart').getContext('2d');
+      var temperatureChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Max Temperature (°C)',
+            data: data,
+            fill: false,
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: false
+            }
+          }
+        }
+      });
+    }
+
+    function createHumidityChart(labels, data) {
+      var ctx = document.getElementById('humidity-chart').getContext('2d');
+      var humidityChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Humidity (%)',
+            data: data,
+            backgroundColor: 'rgba(54, 162, 235, 0.6)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    }
+
+    function createWeatherSummaryChart(data) {
+      const { main, weather } = data;
+      const { temp, feels_like, temp_min, temp_max } = main;
+      const { description } = weather[0];
+
+      var ctx = document.getElementById('weather-pie-chart').getContext('2d');
+      var weatherPieChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: ['Temperature', 'Feels Like', 'Min Temp', 'Max Temp'],
+          datasets: [{
+            label: 'Weather Summary',
+            data: [temp, feels_like, temp_min, temp_max],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.6)',
+              'rgba(54, 162, 235, 0.6)',
+              'rgba(255, 206, 86, 0.6)',
+              'rgba(75, 192, 192, 0.6)'
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'right'
+            },
+            title: {
+              display: true,
+              text: `Current Weather Summary: ${description}`
+            }
+          }
+        }
+      });
+    }
+
+    getWeatherData();
+
+    // Refresh weather data every 10 minutes (600000 milliseconds)
+    setInterval(getWeatherData, 300000);
+  </script>
+</body>
+</html>
